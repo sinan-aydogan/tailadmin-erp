@@ -1,13 +1,26 @@
 <script setup>
+/*Main functions*/
 import { ref } from 'vue';
+
+/*Partials*/
+import GlobalNavigator from "@/Modules/GlobalNav/Index.vue"
+
+/*Components*/
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import Button from 'primevue/button';
+import Dialog from 'primevue/dialog';
 import { Link } from '@inertiajs/vue3';
 
+/*Icons*/
+
+import {IconCategory} from "@tabler/icons-vue"
+
 const showingNavigationDropdown = ref(false);
+const showGlobalNavigator =  ref(false);
 </script>
 
 <template>
@@ -15,16 +28,19 @@ const showingNavigationDropdown = ref(false);
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                            <div class="shrink-0 flex justify-between items-center">
+                                <Link :href="route('dashboard')" class="border-r pr-4">
                                     <ApplicationLogo
                                         class="block h-9 w-auto fill-current text-gray-800"
                                     />
                                 </Link>
+                                <Button link class="px-4" @click="showGlobalNavigator = true">
+                                    <IconCategory class="text-slate-600" size="30"/>
+                                </Button>
                             </div>
 
                             <!-- Navigation Links -->
@@ -149,4 +165,17 @@ const showingNavigationDropdown = ref(false);
             </main>
         </div>
     </div>
+
+    <!--Global Navigator-->
+    <teleport to="body">
+        <Dialog
+            v-model:visible="showGlobalNavigator"
+            :header="$t('globalNavigator.header')"
+            :draggable="false"
+            position="top"
+            class="w-full m-8"
+        >
+            <GlobalNavigator/>
+        </Dialog>
+    </teleport>
 </template>

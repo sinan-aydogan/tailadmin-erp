@@ -3,8 +3,8 @@ import {translates} from "@/Language/translates.js";
 
 const i18n = createI18n({
     legacy: false,
-    locale: 'tr',
-    fallbackLocale: 'tr',
+    locale: 'en',
+    fallbackLocale: 'en',
     messages: translates
 })
 
