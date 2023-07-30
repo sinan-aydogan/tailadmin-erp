@@ -15,6 +15,9 @@ import "primevue/resources/themes/lara-light-indigo/theme.css";
 /*Multi-lang*/
 import {i18n} from "@/Language/index.js";
 
+/*Pinia*/
+import {pinia} from "@/Stores/index.js";
+
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
@@ -24,6 +27,7 @@ createInertiaApp({
             .use(ZiggyVue, Ziggy)
             .use(PrimeVue)
             .use(i18n)
+            .use(pinia)
             .mount(el);
     },
     progress: {
