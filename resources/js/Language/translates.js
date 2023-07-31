@@ -15,9 +15,7 @@ for(const [key , value] of Object.entries(languages)){
     for (const path in value) {
         value[path]().then((mod) => {
             let abbr = String(path).slice(5, path.length-5)
-            let terms= {}
-            terms[abbr] = mod.default
-            translates[key] = terms
+            translates[key] = {...translates[key], [abbr]: mod.default}
         })
     }
 }

@@ -1,10 +1,12 @@
 import { createI18n } from 'vue-i18n'
 import {translates} from "@/Language/translates.js";
 
+console.log(translates)
+
 const i18n = createI18n({
     legacy: false,
-    locale: 'en',
-    fallbackLocale: 'en',
+    locale: 'tr',
+    fallbackLocale: 'tr',
     messages: translates
 })
 
