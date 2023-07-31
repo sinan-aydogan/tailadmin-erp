@@ -153,10 +153,19 @@ const showGlobalNavigator =  ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header class="bg-white shadow" v-if="$slots.header || $slots.actions">
+                <div
+                    class="flex py-6 px-4 sm:px-6 lg:px-8"
+                    :class="{
+                        'justify-between': $slots.header && $slots.actions,
+                        'justify-start': $slots.header && !$slots.actions,
+                        'justify-end': !$slots.header && $slots.actions,
+                    }"
+                >
                     <slot name="header" />
+                    <slot name="actions" />
                 </div>
+
             </header>
 
             <!-- Page Content -->
