@@ -1,8 +1,13 @@
 {
     "header": "Global Navigator",
+    "mainMenu": "Main Menu",
     "search": "Search",
     "apps": "Applications",
+    "departments": "Departments",
+    "distribution_of_employees_by_departments": "Distribution of Employees by Departments",
     "settings": "Settings",
+    "modules": "Modules",
+    "summaries": "Summaries",
     "organization": "Organization",
     "employees": "Employees",
     "customers": "Customers",

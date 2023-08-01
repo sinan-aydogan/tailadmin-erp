@@ -28,7 +28,19 @@ export default function (){
             {
                 id: 'apps.organization',
                 label: t('globalNavigator.organization'),
-                icon: IconTopologyStar3
+                icon: IconTopologyStar3,
+                modules: [
+                    {
+                        id: 'apps.organization.departments',
+                        label: t('globalNavigator.departments'),
+                    }
+                ],
+                summaries: [
+                    {
+                        id: 'apps.organization.distribution_of_employees_by_departments',
+                        label: t('globalNavigator.distribution_of_employees_by_departments'),
+                    }
+                ]
             },
             {
                 id: 'apps.employees',

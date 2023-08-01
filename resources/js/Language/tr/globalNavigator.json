@@ -1,8 +1,13 @@
 {
     "header": "Hızlı Erişim Menüsü",
+    "mainMenu": "Ana Menü",
     "search": "Ara",
     "apps": "Uygulamalar",
+    "departments": "Departmanlar",
+    "distribution_of_employees_by_departments": "Departmanlara Göre Çalışan Dağılımı",
     "settings": "Ayarlar",
+    "modules": "Modüller",
+    "summaries": "Özetler Raporlar",
     "organization": "Organizasyon",
     "employees": "Çalışanlar",
     "customers": "Müşteriler",

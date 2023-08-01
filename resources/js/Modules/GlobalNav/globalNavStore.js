@@ -30,9 +30,21 @@ export const useGlobalNavStore = defineStore('globalNavStore', () => {
 
     })
 
+    const selectedSection = ref('')
+    const secondMenuContent = computed(()=>{
+        if(selectedSection.value){
+
+            let sectionRoot = selectedSection.value.split('.')[0]
+
+            return links.find(i=>i.id === sectionRoot).links.find(j=>j.id === selectedSection.value)
+        }
+    })
+
     return {
         links,
         searchTerm,
-        searchResult
+        searchResult,
+        selectedSection,
+        secondMenuContent
     }
 })
