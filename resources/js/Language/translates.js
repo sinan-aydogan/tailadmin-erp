@@ -1,6 +1,6 @@
 /*Import language files*/
-const tr = import.meta.glob('./tr/*.json')
-const en = import.meta.glob('./en/*.json')
+const tr = import.meta.glob('./tr/*.json', {eager: true})
+const en = import.meta.glob('./en/*.json', {eager: true})
 
 /*Generate languages object*/
 let languages = {
@@ -10,14 +10,18 @@ let languages = {
 
 let translates = {}
 
-for(const [key , value] of Object.entries(languages)){
+for (const [lang, module] of Object.entries(languages)) {
 
-    for (const path in value) {
-        value[path]().then((mod) => {
-            let abbr = String(path).slice(5, path.length-5)
-            translates[key] = {...translates[key], [abbr]: mod.default}
-        })
+    translates[lang] = {}
+
+    for (const path in module) {
+
+        let terms = module[path].default
+        let abbr = String(path).slice(5, path.length - 5)
+
+        translates[lang][abbr] = terms
     }
+
 }
 
 export {translates}

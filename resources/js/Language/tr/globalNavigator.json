@@ -26,5 +26,8 @@
     "calibrations": "Kalibrasyonlar",
     "globalSettings": "Genel Ayarlar",
     "rolesAndPermissions": "Roller ve İzinler",
+    "roles": "Roller",
+    "permissions": "Yetkiler",
+    "permissionGroups": "Yetki Grupları",
     "noResults": "Sonuç bulunamadı, lütfen arama kriterlerini değiştirin."
 }
